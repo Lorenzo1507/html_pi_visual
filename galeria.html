@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Arnaldo Photographer</title>
+        <link rel="stylesheet"  href="estilo.css" type="text/css">
+    </head>
+
+    <body>
+
+        <header>
+            <section>
+                <figure>
+                    <img src="imagem/logo.png">
+                </figure>
+                <h1>Arnaldo Photographer</h1>
+            </section>
+        
+            <aside>
+                <nav id="menu">
+                    <ul class="lista" >
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="casamento.html">Wedding</a>
+                            <ul>
+                                <li><a href="casamentopre.html">Pré Wedding</a></li>
+                                <li><a href="casamentopos.html">After Weeding</a></li>
+                            </ul></li>
+                        <li><a href="eventos.html">Eventos</a></li>
+                        <li><a href="festas.html">Festas</a></li>
+                        <li><a id="menuatual" href="galeria.html">Portifório</a></li>
+                        <li><a href="info.html">About</a></li>
+                        <li><a href="contato.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </header>
+
+        <main>
+            <section id="sliderDeFotos">
+                <article id="slider1">
+                    <figcaption>
+                        <p>Casamento de Wagner & Leticia</p>
+                    </figcaption>
+                    <figure>
+                        <img class="slider1 sliderGeral" src="imagem/slider1/foto1.jpg">
+                    </figure>                       
+                    <figure>
+                        <img class="slider1 sliderGeral" src="imagem/slider1/foto2.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider1 sliderGeral" src="imagem/slider1/foto3.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider1 sliderGeral" src="imagem/slider1/foto4.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider1 sliderGeral" src="imagem/slider1/foto5.jpg">
+                    </figure>                       
+                    <figure>
+                        <img class="slider1 sliderGeral" src="imagem/slider1/foto6.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider1 sliderGeral" src="imagem/slider1/foto7.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider1 sliderGeral" src="imagem/slider1/foto8.jpg">
+                    </figure>
+
+                    <button onclick="mudarFoto(-1);">&#10094;</button>
+                    <button onclick="mudarFoto(1);">&#10095;</button>
+                </article>  
+                
+                <article id="slider2">
+                    <figcaption>
+                        <p>Casamento de Marina & Caio</p>
+                    </figcaption>
+                    <figure>
+                        <img class="slider2 sliderGeral" src="imagem/slider2/foto1.jpg">
+                    </figure>                       
+                    <figure>
+                        <img class="slider2 sliderGeral" src="imagem/slider2/foto2.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider2 sliderGeral" src="imagem/slider2/foto3.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider2 sliderGeral" src="imagem/slider2/foto4.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider2 sliderGeral" src="imagem/slider2/foto5.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider2 sliderGeral" src="imagem/slider2/foto6.jpg">
+                    </figure>
+
+                    <button onclick="mudarFoto2(-1);">&#10094;</button>
+                    <button onclick="mudarFoto2(1);">&#10095;</button>
+                </article> 
+
+                <article id="slider3">
+                    <figcaption>
+                        <p class="mgTop">Casamento de Kelly & Alexandre</p>
+                    </figcaption>
+                    <figure>
+                        <img class="slider3 sliderGeral" src="imagem/slider3/foto1.jpg">
+                    </figure>                       
+                    <figure>
+                        <img class="slider3 sliderGeral" src="imagem/slider3/foto2.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider3 sliderGeral" src="imagem/slider3/foto3.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider3 sliderGeral" src="imagem/slider3/foto4.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider3 sliderGeral" src="imagem/slider3/foto5.jpg">
+                    </figure>                       
+                    <figure>
+                        <img class="slider3 sliderGeral" src="imagem/slider3/foto6.jpg">
+                    </figure>
+
+                    <button onclick="mudarFoto3(-1);">&#10094;</button>
+                    <button onclick="mudarFoto3(1);">&#10095;</button>
+                </article>  
+
+                <article id="slider4">
+                    <figcaption>
+                        <p class="mgTop">Bodas 50 anos de Rosa & Fabrizio</p>
+                    </figcaption>
+                    <figure>
+                        <img class="slider4 sliderGeral" src="imagem/slider4/foto1.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider4 sliderGeral" src="imagem/slider4/foto2.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider4 sliderGeral" src="imagem/slider4/foto3.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider4 sliderGeral" src="imagem/slider4/foto4.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider4 sliderGeral" src="imagem/slider4/foto5.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider4 sliderGeral" src="imagem/slider4/foto6.jpg">
+                    </figure>
+
+                    <button onclick="mudarFoto4(-1);">&#10094;</button>
+                    <button onclick="mudarFoto4(1);">&#10095;</button>
+                </article>
+
+                
+                <article id="slider5">
+                    <figcaption>
+                        <p class="mgTop">Festa debutante Ana Júlia</p>
+                    </figcaption>
+                    <figure>
+                        <img class="slider5 sliderGeral" src="imagem/slider5/foto1.jpg">
+                    </figure>                       
+                    <figure>
+                        <img class="slider5 sliderGeral" src="imagem/slider5/foto2.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider5 sliderGeral" src="imagem/slider5/foto3.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider5 sliderGeral" src="imagem/slider5/foto4.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider5 sliderGeral" src="imagem/slider5/foto5.jpg">
+                    </figure>                       
+                    <figure>
+                        <img class="slider5 sliderGeral" src="imagem/slider5/foto6.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider5 sliderGeral" src="imagem/slider5/foto7.jpg">
+                    </figure>
+
+                    <button onclick="mudarFoto5(-1);">&#10094;</button>
+                    <button onclick="mudarFoto5(1);">&#10095;</button>
+                </article>  
+
+                <article id="slider6">
+                    <figcaption>
+                        <p class="mgTop">Festa debutante Giulia</p>
+                    </figcaption>
+                    <figure>
+                        <img class="slider6 sliderGeral" src="imagem/slider6/foto1.jpg">
+                    </figure>                       
+                    <figure>
+                        <img class="slider6 sliderGeral" src="imagem/slider6/foto2.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider6 sliderGeral" src="imagem/slider6/foto3.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider6 sliderGeral" src="imagem/slider6/foto4.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider6 sliderGeral" src="imagem/slider6/foto5.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider6 sliderGeral" src="imagem/slider6/foto6.jpg">
+                    </figure>
+
+                    <button onclick="mudarFoto6(-1);">&#10094;</button>
+                    <button onclick="mudarFoto6(1);">&#10095;</button>
+                </article> 
+
+                <article id="slider7">
+                    <figcaption>
+                        <p class="mgTop">Books de modelos</p>
+                    </figcaption>
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto1.jpg">
+                    </figure>                       
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto2.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto3.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto4.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto5.jpg">
+                    </figure>                       
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto6.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto7.jpg">
+                    </figure>                       
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto8.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto9.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto10.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto11.jpg">
+                    </figure>                       
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto12.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto13.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto14.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto15.jpg">
+                    </figure>                       
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto16.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto17.jpg">
+                    </figure>                       
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto18.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto19.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto20.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto21.jpg">
+                    </figure>                       
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto22.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider7 sliderGeral" src="imagem/slider7/foto23.jpg">
+                    </figure>
+
+                    <button onclick="mudarFoto7(-1);">&#10094;</button>
+                    <button onclick="mudarFoto7(1);">&#10095;</button>
+                </article>  
+
+                <article id="slider8">
+                    <figcaption>
+                        <p class="mgTop">Evento Romero Britto</p>
+                    </figcaption>
+                    <figure>
+                        <img class="slider8 sliderGeral" src="imagem/slider8/foto1.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider8 sliderGeral" src="imagem/slider8/foto2.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider8 sliderGeral" src="imagem/slider8/foto3.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider8 sliderGeral" src="imagem/slider8/foto4.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider8 sliderGeral" src="imagem/slider8/foto5.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider8 sliderGeral" src="imagem/slider8/foto6.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider8 sliderGeral" src="imagem/slider8/foto7.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider8 sliderGeral" src="imagem/slider8/foto8.jpg">
+                    </figure>
+                    <figure>
+                        <img class="slider8 sliderGeral" src="imagem/slider8/foto9.jpg">
+                    </figure>
+
+                    <button onclick="mudarFoto8(-1);">&#10094;</button>
+                    <button onclick="mudarFoto8(1);">&#10095;</button>
+                </article>
+                
+                <script src="script.js"></script>
+    
+            </section>
+
+            <section> 
+                <article id="retro">
+                    <p>Retrospectiva</p>
+                    <p>Francieli & Ricardo Justus</p>
+                </article>
+                <embed id="video" src="imagem/retrospectivaHD_Trim.mp4"></embed>
+            </section>
+        </main>
+        
+        <footer>
+            <section id="footerDown">
+                <figure>
+                    <img src="imagem/logo.png">
+                </figure>
+                <h1>Arnaldo Photographer</h1>
+            </section>
+
+            <article id="footerContato">
+                <table>
+                    <tr>
+                        <td>
+                            <a href="https://www.facebook.com/arnaldo.silva.522" target="_blanck">
+                                <figure id="barra">
+                                    <img src="imagem/faceFooter.png">
+                                </figure>
+                            </a>
+                        </td>
+                        <td>  
+                            <a href="https://www.instagram.com/arnaldo8311/" target="_blanck">
+                                <figure>
+                                    <img src="imagem/instaFooter.png">
+                                </figure>
+                            </a>
+                        </td>
+                        <td>           
+                            <a href="https://wa.me/5511999265480" target="_blanck">
+                                <figure>
+                                    <img src="imagem/whatsfooter.png">
+                                </figure>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="mailto:arno_ko@hotmail.com" target="_blanck">
+                                <figure>
+                                    <img src="imagem/gmailfooter.png">
+                                </figure>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </article>
+        </footer>
+    </body>
+
+</html>
