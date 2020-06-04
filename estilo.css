@@ -348,6 +348,7 @@ button{
 
 footer{
     background-color: rgba(65, 52, 38, 0.767);
+    height: 250px;
 }
 
 footer section{
@@ -389,4 +390,10 @@ footer h1{
 
 #footerContato table{
     border-spacing: 50px;
+}
+
+#copyright{
+    position: absolute;
+    right: 210px;
+    margin-bottom: 0;
 }
