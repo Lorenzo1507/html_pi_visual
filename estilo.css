@@ -45,6 +45,21 @@ header img{
     border-radius: 100%;
 }
 
+h1{
+    color:white;
+
+}
+
+li{
+    color:white;
+    font-size: 25px;
+}
+
+p em strong{
+    color:rgba(64, 64, 233, 0.897);
+    text-decoration: underline;
+}
+
 #menu a{
     color: #E1A719;
     text-decoration: none;

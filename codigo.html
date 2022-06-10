@@ -31,101 +31,125 @@
 
         <main id="pag1">
             <article class="textos">
-                <h1>Breve introdução</h1>
-                <p>Neste trabalho construimos um bot que faz o reconhecimento de diversas imagens. O código foi feito em python e também foi disponibilizado como um bot no discord.</p>
+                <h1>Introdução</h1>
+                <p>Nesta área explicaremos detalhes sobre o código para que fique mais claro como chegamos ao nosso resultado.</p>
             </article>
 
             <br>
             <br>
             
             <article class="textos">
-                <h1>Resumo</h1>
+                <h1>Pedaços do código</h1>
                 <p>
-                    A utilização de uma classificação de imagens com Deep Learning mostra-se muito útil e eficiente, classificações como raça de cachorro podem ser modeladas e realizadas por algorítimos eficientes. 
-                    Por meio de um Data Set tornou-se possível realizar um aprendizado onde pode-se classificar a raça de um cachorro, dentre 120 raças. 
-                    Para interação com o usuário, o Bot de classificação foi disponibilizado na plataforma Discord
+                    Primeiramente, para podermos efetivamente classificar as imagens, pegamos um conjunto prévio de imagens classificadas
+                    para que o modelo pudesse ser treinado e calibrado. Para que o modelo conseguisse generalizar a classificação, foi necessário um enorme conjunto
+                    de dados de cada uma das categorias do modelo.
                 </p>
             </article>
-            <table>
-                <tr>
-                    <td>
-                        <figcaption>
-                            <p>Pré Wedding</p>
-                        </figcaption>
-                        <figure>
-                            <img src="imagem/preCasa.jpg">
-                        </figure>                        
-                    </td>
-                    <td>
-                        <figcaption>
-                            <p>Wedding</p>
-                        </figcaption>                        
-                        <figure>
-                            <img src="imagem/casamento.jpeg">
-                        </figure>                        
-                    </td>
-                    <td>
-                        <figcaption>
-                            <p>After Wedding</p>
-                        </figcaption>
-                        <figure>
-                            <img src="imagem/after.jpg">
-                        </figure>                        
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <figcaption>
-                            <p>Wedding Anniversary</p>
-                        </figcaption>
-                        <figure>
-                            <img src="imagem/bodas.jpg">
-                        </figure>                        
-                    </td>
-                    <td>
-                        <figcaption>
-                            <p>Birthday</p>
-                        </figcaption>
-                        <figure>
-                            <img src="imagem/niver.jpg">
-                        </figure>
-                    </td>
-                    <td>
-                        <figcaption>
-                            <p>15th Birthday Party</p>
-                        </figcaption>
-                        <figure>
-                            <img src="imagem/debutante.jpg">
-                        </figure>                        
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <figcaption>
-                            <p>Models</p>
-                        </figcaption>
-                        <figure>
-                            <img src="imagem/modelo.jpg">
-                        </figure>                        
-                    </td>
-                    <td>
-                        <figcaption>
-                            <p>Corporate Event</p>
-                        </figcaption>
-                        <figure>
-                            <img src="imagem/corporativo.jpg">
-                        </figure>                        
-                    </td>
-                    <td>
-                        <figcaption>
-                            <p>Artistic Exhibitions</p>
-                        </figcaption>
-                        <figure>
-                            <img src="imagem/romero.jpeg">
-                        </figure>                        
-                    </td>
-                </tr>
-            </table>
+
+            <article style="margin-left: 20px;">
+                <br>
+                <p>
+                    Seguindo para o Treinamento, ainda temos diversas funções para que ele possa ocorrer corretamente. Que são as seguintes:
+                    <ui>
+                        <li><strong> Carregar modelo e classes de placas</strong></li>
+                        <p><em>
+                            <strong>model = load_model('ModelDAv.h5')</strong>
+                            <br>
+                            <br>
+
+                            <strong>boardClasses</strong>
+                            = ['Speed limit (20km/h)',
+                            <br>'Speed limit (30km/h)',
+                            <br>'Speed limit (50km/h)',
+                            <br>'Speed limit (60km/h)',
+                            <br>'Speed limit (70km/h)',
+                            <br>'Speed limit (80km/h)',
+                            <br>'End of speed limit (80km/h)',
+                            <br>'Speed limit (100km/h)',
+                            <br>'Speed limit (120km/h)',
+                            <br>'No passing',
+                            <br>'No passing for vechiles over 3.5 metric tons',
+                            <br>'Right-of-way at the next intersection',
+                            <br>'Priority road',
+                            <br>'Yield',
+                            <br>'Stop',
+                            <br>'No vechiles',
+                            <br>'Vechiles over 3.5 metric tons prohibited',
+                            <br>'No entry',
+                            <br>'General caution',
+                            <br>'Dangerous curve to the left',
+                            <br>'Dangerous curve to the right',
+                            <br>'Double curve',
+                            <br>'Bumpy road',
+                            <br>'Slippery road',
+                            <br>'Road narrows on the right',
+                            <br>'Road work',
+                            <br>'Traffic signals',
+                            <br>'Pedestrians',
+                            <br>'Children crossing',
+                            <br>'Bicycles crossing',
+                            <br>'Beware of ice/snow',
+                            <br>'Wild animals crossing',
+                            <br>'End of all speed and passing limits',
+                            <br>'Turn right ahead',
+                            <br>'Turn left ahead',
+                            <br>'Ahead only',
+                            <br>'Go straight or right',
+                            <br>'Go straight or left',
+                            <br>'Keep right',
+                            <br>'Keep left',
+                            <br>'Roundabout mandatory',
+                            <br>'End of no passing',
+                            <br>'End of no passing by vechiles over 3.5 metric tons']
+                        </em></p>
+
+                        <br><br><li><strong>Criação do cliente</strong></li>
+                        <p><em>
+                            <br>client = discord.Client()
+                            <br>client = commands.Bot(command_prefix='.')
+
+                        </em></p>
+
+                        <br><br><li><strong>Registro de evento e preparação do bot</strong></li>
+                        <p><em>
+                            <strong>#registra o evento</strong>
+                            <br>@client.event 
+
+                            <br><br><strong>#Bot pronto para começar a ser usado</strong>
+                            <br>async def on_ready():
+                            <br>&emsp;print('Conectado {0.user}'.format(client))
+                        </em></p>
+
+                        <br><br><li><strong>Comandos no discord e análise da imagem</strong></li>
+                        <p><em>
+                            <strong>#dispara sempre que uma mensagem não autoral é recebida</strong>
+                            <br>@client.event
+                            <br>async def on_message(message):
+                            <br>&ensp;if message.author == client.user:
+                            <br>&emsp;return
+
+                            <br>&ensp;if message.content.startswith('$oi'):
+                            <br>&emsp;await message.channel.send('Eae meu consagrado')
+
+                            <br><br>image_shape = (50,50)
+                            <br>img = Image.open(dir_path + 'to.jpg').convert('RGB')
+                            <br>img = img.resize(image_shape)
+                            <br>img = np.expand_dims(img, axis=0)
+                            <br>img = np.array(img)
+
+                            <br><br>index = (np.argmax(predictions, axis = 1))
+                            <br>board = boardClasses[int(index)]
+                        </em></p>
+                    </ui>
+                </p>
+            </article>
+
+            <article class="textos">
+                <h1>Alguns detalhes</h1>
+                <p>Reduzimos o modelo para 17 epochs, porque ele mantém a acurácia de 99% e abaixa o overfit (loss), enqunto modelos com 25 epochs para cima acabam tendo um overfit maior.</p>
+            </article>
+            
         </main>     
         
         <footer>
