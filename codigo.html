@@ -104,42 +104,81 @@
                             <br>'End of no passing by vechiles over 3.5 metric tons']
                         </em></p>
 
-                        <li><strong> Tamanho médio do shape</strong></li>
+                        <li><strong>Alteração do shape da imagem</strong></li>
+                        <p>
+                            As redes neurais convolucionais não podem funcionar em imagens que possuem várias dimensões. Vamos redimensionar essas imagens durante a construção do modelo.
+                            Mas primeiro encontre a média das dimensões de todas as imagens no conjunto de treinamento.
+                        </p>
                         <p><em>
-                            <br>dim1 = []
+                            dim1 = []
                             <br>dim2 = []
 
                             <br><br>for i in range(0,43):
                             <br>&emsp;labels = train_path + '/{0}'.format(i)
+                                <br>&emsp;image_path = os.listdir(labels)
+                                <br>&emsp;for x in image_path:
+                                <br>&emsp;&emsp;img = imread(labels + '/' + x)
+                                    <br>&emsp;&emsp;dim1.append(img.shape[0])
+                                    <br>&emsp;&emsp;dim2.append(img.shape[1])
+
+
+                                <br><br>Importar as imagens:
+                                <br>images = []
+                                <br>label_id = []
+
+                            <br><br>for i in range(43):
+                            <br>&emsp;labels = train_path + '/{0}'.format(i)
                             <br>&emsp;image_path = os.listdir(labels)
                             <br>&emsp;for x in image_path:
-                            <br>&emsp;img = imread(labels + '/' + x)
-                            <br>&emsp;dim1.append(img.shape[0])
-                            <br>&emsp; dim2.append(img.shape[1])
+                            <br>&emsp;&emsp;img = Image.open(labels + '/' + x)
+                            <br>&emsp;&emsp;img = img.resize(image_shape)
+                            <br>&emsp;&emsp;img = np.array(img)
+                            <br>&emsp;&emsp;images.append(img)
+                            <br>&emsp;&emsp;label_id.append(i)
                         </em></p>
 
-                        images = []
-
-
-                        <li><strong>Alteração do shape da imagem</strong></li>
+                        <li><strong>Construção do modelo</strong></li>
                         <p><em>
-                            <br>label_id = []
+                            model = Sequential()
 
-                            for i in range(43):
-                                labels = train_path + '/{0}'.format(i)
-                                image_path = os.listdir(labels)
-                                for x in image_path:
-                                    img = Image.open(labels + '/' + x)
-                                    img = img.resize(image_shape)
-                                    img = np.array(img)
-                                    images.append(img)
-                                    label_id.append(i)
-                        </em></p>
+                        <br><br><strong># 1ª camada</strong>
+                        <br>model.add(Conv2D(filters = 64, kernel_size = (3,3), input_shape = x_train.shape[1:], activation = 'relu', padding = 'same'))
+                        <br>model.add(MaxPool2D(pool_size=(2,2)))
+                        <br>model.add(Dropout(0.5))
 
-                        <br><br><li><strong>Criação do cliente</strong></li>
-                        <p><em>
-                            <br>client = discord.Client()
-                            <br>client = commands.Bot(command_prefix='.')
+                        <br><br><strong># 2ª camada</strong>
+                        <br>model.add(Conv2D(filters = 64, kernel_size = (3,3), activation = 'relu'))
+                        <br>model.add(MaxPool2D(pool_size=(2,2)))
+                        <br>model.add(Dropout(0.5))
+
+                        <br><br><strong># 3ª camada</strong>
+                        <br>model.add(Conv2D(filters = 64, kernel_size = (3,3), activation = 'relu'))
+                        <br>model.add(MaxPool2D(pool_size=(2,2)))
+                        <br>model.add(Dropout(0.5))
+                        <br>model.add(Flatten())
+
+                        <br><br><strong>#Dense layer</strong>
+                        <br>model.add(Dense(128, activation = 'relu'))
+                        <br>model.add(Dropout(0.5))
+
+                        <br><br><strong>#Camada de saída (output)</strong>
+                        <br>model.add(Dense(43, activation = 'softmax'))
+                        
+                        
+                        <br><br><strong># Para de treinar quando uma métrica monitorada parar de melhorar.</strong>
+                        <br>early_stopping = tf.keras.callbacks.EarlyStopping(monitor = 'val_loss', patience = 2)
+                        
+                        <br><br><strong># Gerar dados aleatórios, fazer o treinamento.</strong>
+                        <br>model.fit(
+                        
+                            <br>&emsp;x_train, y_train,
+                            <br>&emsp;epochs = 17,
+                            <br>&emsp;batch_size = 64,
+                            <br>&emsp;validation_data = (x_val, y_val),
+                            <br>&emsp;callbacks = [early_stopping],
+                            <br>&emsp;verbose = 1
+                        
+                        <br>)
 
                         </em></p>
 
@@ -186,7 +225,7 @@
         
         <footer>
                 <article>
-                    <p id="copyright">Integrantes: Lucas Carvalho, Thaysa, Daniel McCarthy e Lorenzo Canelhas</p>
+                    <p id="copyright">Integrantes: Lucas Carvalho, Thaysa Zille, Daniel McCarthy e Lorenzo Canelhas</p>
                 </article>
             </article>
         </footer>
