@@ -104,6 +104,38 @@
                             <br>'End of no passing by vechiles over 3.5 metric tons']
                         </em></p>
 
+                        <li><strong> Tamanho médio do shape</strong></li>
+                        <p><em>
+                            <br>dim1 = []
+                            <br>dim2 = []
+
+                            <br><br>for i in range(0,43):
+                            <br>&emsp;labels = train_path + '/{0}'.format(i)
+                            <br>&emsp;image_path = os.listdir(labels)
+                            <br>&emsp;for x in image_path:
+                            <br>&emsp;img = imread(labels + '/' + x)
+                            <br>&emsp;dim1.append(img.shape[0])
+                            <br>&emsp; dim2.append(img.shape[1])
+                        </em></p>
+
+                        images = []
+
+
+                        <li><strong>Alteração do shape da imagem</strong></li>
+                        <p><em>
+                            <br>label_id = []
+
+                            for i in range(43):
+                                labels = train_path + '/{0}'.format(i)
+                                image_path = os.listdir(labels)
+                                for x in image_path:
+                                    img = Image.open(labels + '/' + x)
+                                    img = img.resize(image_shape)
+                                    img = np.array(img)
+                                    images.append(img)
+                                    label_id.append(i)
+                        </em></p>
+
                         <br><br><li><strong>Criação do cliente</strong></li>
                         <p><em>
                             <br>client = discord.Client()
